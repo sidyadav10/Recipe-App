@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #D8D9DA;
+
+}
+nav{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    box-shadow: 0px 0px 10px #808080;
+    padding:  0 4vw 0 10vw ;
+    align-items: center;
+   background:linear-gradient(45deg,#252525,#252525);
+    justify-content: space-between;
+}
+.logo{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    color: #fff;
+    padding: .5vw;
+
+   
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0px 0px 2px #fffdfd);
+}
+
+
+.search_menu{
+    width: 80%;
+    height: 100%;
+     display: flex;
+    justify-content: end; 
+     align-items: center; 
+}
+#input{
+    width: 200px;
+    padding: 8px;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    margin-right: .7vw;
+    font-weight: 900;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: rgb(191, 4, 35);
+}
+button{
+    width: 100px;
+    padding: 10px;
+    background-color: rgb(245, 20, 57);
+    font-weight: 700;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    transition: background-color .3s ease;
+}
+
+
+.container{
+    width: 70%;
+    display: grid;
+    margin-top: 2vw;
+    background-color: #D8D9DA;
+    gap: 20px;
+    padding: 2vw;
+    font-size: 3rem;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+}
+.recipe:hover{
+    transform: scale(1.02);
+    box-shadow:-0px -0px 5px #808080, 0px 0px 7px #808080;
+}
+.recipe {
+    width: 220px;
+    height: fit-content;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    background-color: #D8D9DA;
+    position: relative;
+    transition: transform .2s ease-in;
+}
+.recipe h4{
+    font-size: 1rem;
+    font-weight: 900;
+    margin-block: .7vw;
+}
+.recipe h4 span{
+    font-weight: 400;
+    margin-left: .47vw;
+}
+
+.recipe h1{
+    font-size: 1.5rem;
+}
+.recipe_btn{
+    margin-bottom: 1rem;
+}
+.recipe img{
+    width: 100%;
+    height: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+.nodata{
+    width: 100%;
+    border: 2px solid red;
+    text-align: center;
+
+}
+.recipe.viewBtn .show_recipe{
+    width: 100%;
+    padding:2rem 1rem;
+    height: 100%;
+}
+
+.close:after{
+    content: "";
+    width: 20px;
+    height: 3px;
+    background-color: #252525;
+    position: absolute;
+    transform: rotate(45deg);
+}
+.close::before{
+    content: "";
+    width: 20px;
+    height: 3px;
+    position: absolute;
+    transform: rotate(-45deg);
+    background-color: #252525;
+}
+.close:hover{
+    transform: scale(1.05);
+    border: 2px solid #252525;
+}
+.close{
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    right: 2%;
+    transition: transform .2s ease-in,
+                border .2s linear;
+    cursor: pointer;
+}
+.show_recipe{
+    position: absolute;
+    height: 0%;
+    width: 100%;
+    overflow-y: scroll;
+    left: 0;
+    top: 0;
+
+    transition: height .3s ease-in,
+    padding .3s ease-in;
+    background-color:#d9d4d4df;
+    padding: 0rem;
+    color:#212020;
+}
+
+.show_recipe h1{
+    margin-block: .5rem;
+    font-size: 1.3rem;
+}
+.show_recipe li{
+    width: 100%;
+    list-style:decimal;
+    font-weight: 600;
+    font-size: .8rem;
+    margin-inline: .5rem;
+    margin-bottom: 1rem;
+}
+.show_recipe p{
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    text-align: left;
+    word-break: break-all;
+    
+}
+
+
+
+
+@media (max-width:460px){
+    nav{
+        
+        padding: 2vw;
+        
+    }
+    .container{
+        width: 95%;
+        column-gap: 0;
+        padding: 1rem;
+        gap: 40px 0;
+        justify-items: center;
+
+        grid-template-columns: repeat(1,1fr);
+    }
+    .search_menu{
+        
+        width: 78%;
+        border: 2px solid red;
+    }
+    .recipe{
+        width: 80%;
+    }
+    #input{
+        width: 120px;
+        height: 30px;
+        font-size: .7rem;
+        padding: .7rem;
+    }
+    button{
+        width: 50px;
+        height: 30px;
+        font-size: .7rem;
+        padding: 0;
+    }
+}
